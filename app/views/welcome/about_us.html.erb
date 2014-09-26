@@ -1,0 +1,116 @@
+<!-- <html>
+<head>
+  <script src="jquery.js">
+  
+    function swapImages(){
+      var $active = $('#myGallery .active');
+      var $next = ($('#myGallery .active').next().length > 0) ? $('#myGallery .active').next() : $('#myGallery img:first');
+      $active.fadeOut(function(){
+      $active.removeClass('active');
+      $next.fadeIn().addClass('active');
+      });
+    }
+ 
+    $(document).ready(function(){
+      // Run our swapImages() function every 5secs
+      setInterval('swapImages()', 5000);
+    }
+  </script>
+  <style>
+    #myGallery{
+      position:relative;
+      width:400px; /* Set your image width */
+      height:300px; /* Set your image height */
+    }
+    #myGallery img{
+      display:none;
+      position:absolute;
+      top:0;
+      left:0;
+    }
+    #myGallery img.active{
+      display:block;
+    }
+  </style>
+</head>
+<body>
+  <div id="myGallery">
+    <img src="/assets/cpvc.jpg" class="active">
+    <img src="/assets/desk.jpg" class="active">
+    <img src="/assets/desk1.jpg" class="active">
+  </div>
+
+  <img src="/assets/desk.jpg">
+  <img src="/assets/desk1.jpg">
+</body>
+</html>
+ -->
+
+
+ <html>
+ <head>
+ <title>rotate images</title>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+ <style type="text/css">
+ #container {
+     width:100px;
+     height:100px;
+     padding:4px;
+     border:3px double #999;
+     margin:auto;
+  }
+ #container img {
+     display:block;
+     border:0 solid;
+  }
+ </style>
+
+ <script type="text/javascript">
+
+ window.onload=function() {
+    rotateImages();
+  }
+    var pics=[
+        '/assets/cpvc.jpg',
+        '/assets/jindal.jpg',
+        '/assets/galva.jpg',
+        '/assets/desk3.jpg',
+        '/assets/desk1.jpg',
+        '/assets/desk.jpg'];
+
+    var links=[
+        'http://www.htmlforums.com/',
+        'http://www.w3schools.com/',
+        'http://www.google.com/',
+        'http://www.alistapart.com/',
+        'http://www.bbc.co.uk/',
+        'http://www.spreadfirefox.com/',];
+
+    var c=0;
+    var speed=4000;
+
+ function rotateImages() {
+    document.getElementById('pic').src=pics[c];
+    document.getElementById('lnk').href=links[c];
+    c++;
+ if(c==pics.length) {
+    c=0;
+  }
+ setTimeout('rotateImages()',speed);
+  }
+
+ </script>
+
+ </head>
+ <body>
+
+ <div id="container">
+ <a id="lnk" href="http://www.htmlforums.com/">
+ <img id="pic" src="/assets/cpvc.jpg" alt=""/>
+ </a>
+ </div>
+
+ </body>
+ </html>
